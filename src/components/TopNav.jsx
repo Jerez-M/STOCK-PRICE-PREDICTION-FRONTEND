@@ -10,7 +10,9 @@ import {
   RocketOutlined,
   LineChartOutlined,
   BookOutlined,
-  QuestionCircleOutlined
+  QuestionCircleOutlined,
+  DeploymentUnitOutlined,
+  DatabaseOutlined
 } from '@ant-design/icons';
 
 const TopNav = () => {
@@ -44,6 +46,12 @@ const TopNav = () => {
       icon: <LineChartOutlined />,
       label: 'Analysis',
       tooltip: 'Stock Analysis'
+    },
+    {
+      key: '/architecture',
+      icon: <DeploymentUnitOutlined />,
+      label: 'System',
+      tooltip: 'System Architecture & Model Details'
     },
     {
       key: '/documentation',
@@ -201,9 +209,10 @@ const TopNav = () => {
         <div 
           className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300"
           style={{ 
-            width: location.pathname === '/' ? '25%' :
-                   location.pathname === '/predict' ? '50%' :
-                   location.pathname.startsWith('/stock/') ? '75%' :
+            width: location.pathname === '/' ? '20%' :
+                   location.pathname === '/predict' ? '40%' :
+                   location.pathname.startsWith('/stock/') ? '60%' :
+                   location.pathname === '/architecture' ? '80%' :
                    location.pathname === '/documentation' ? '100%' : '0%'
           }}
         />
