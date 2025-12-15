@@ -4,6 +4,7 @@ import TopNav from './components/TopNav';
 import HomePage from './pages/HomePage';
 import PredictionPage from './pages/PredictionPage';
 import StockAnalysisPage from './pages/StockAnalysisPage';
+import DocumentationPage from './pages/DocumentationPage.jsx';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/predict" element={<PredictionPage />} />
               <Route path="/stock/:symbol" element={<StockAnalysisPage />} />
+              <Route path="/documentation" element={<DocumentationPage />} />
             </Routes>
           </main>
         </div>

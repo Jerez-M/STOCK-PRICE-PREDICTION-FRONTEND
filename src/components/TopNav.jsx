@@ -8,7 +8,9 @@ import {
   StockOutlined,
   MenuOutlined,
   RocketOutlined,
-  LineChartOutlined
+  LineChartOutlined,
+  BookOutlined,
+  QuestionCircleOutlined
 } from '@ant-design/icons';
 
 const TopNav = () => {
@@ -42,6 +44,12 @@ const TopNav = () => {
       icon: <LineChartOutlined />,
       label: 'Analysis',
       tooltip: 'Stock Analysis'
+    },
+    {
+      key: '/documentation',
+      icon: <BookOutlined />,
+      label: 'Docs',
+      tooltip: 'Documentation & Help'
     },
   ];
 
@@ -126,6 +134,16 @@ const TopNav = () => {
               </div>
             </div>
 
+            {/* Help Button */}
+            <Tooltip title="Quick Help">
+              <Button
+                type="text"
+                icon={<QuestionCircleOutlined className="text-gray-300" />}
+                className="hover:bg-gray-800 rounded-lg"
+                onClick={() => navigate('/documentation')}
+              />
+            </Tooltip>
+
             {/* AI Predictor Button */}
             <Tooltip title="Try AI Predictor">
               <Button
@@ -183,9 +201,10 @@ const TopNav = () => {
         <div 
           className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300"
           style={{ 
-            width: location.pathname === '/' ? '33%' :
-                   location.pathname === '/predict' ? '66%' :
-                   location.pathname.startsWith('/stock/') ? '100%' : '0%'
+            width: location.pathname === '/' ? '25%' :
+                   location.pathname === '/predict' ? '50%' :
+                   location.pathname.startsWith('/stock/') ? '75%' :
+                   location.pathname === '/documentation' ? '100%' : '0%'
           }}
         />
       </div>
